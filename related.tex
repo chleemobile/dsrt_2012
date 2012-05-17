@@ -1,0 +1,34 @@
+\section {Related Work}
+
+Correct, optimized rollback is a natural field of interest in parallel discrete event simulations. It is
+not always as easy as simply decrementing a previously incremented integer. In many cases,
+some variables have simply changed their value and to implement a correct rollback, previous
+values must be stored. The difficulty of such a problem becomes immediately obvious. As such,
+it has been a topic of much interest among those attempting to implement PDES.
+
+Previous attempts have been made to use method-reversal libraries to generate rollback code.
+In fact, attempts have even used Backstroke specifically. In order to not simply redo what others
+have already accomplished, we will use the conclusions from previous attempts to bolster our
+own methodology rather than simply substitute it in. Hou, Fujimoto,
+and Vuduc explored setting up a SSA graph for values of the simulation and a
+specialized algorithm to search the graph for appropriate rollback values. They used Backstroke
+in their implementation and compared its efficiency to incremental state saving, copy state
+saving, and a reverse C compiler \cite {careff} \cite{fujane}. They concluded that Backstroke was indeed the most
+efficient. This is promising for our own implementation, which will be done in Backstroke.
+
+Other approaches include examining the assignment for various variables. If possible, a logical
+previous/next value for the variable is decided upon but if this fails, the value is simply stored
+and loaded again in the event of a rollback. This approach is simpler than using reverse code-
+generation but it is slower because it often fails to decide logically on appropriate values and
+ends up storing many variables. Our implementation will be better at “deciding logically” on
+appropriate forward/backward values for variables thanks to Backstroke.
+
+Wieland analyzes the Detailed Policy Assessment Tool (DPAT) \cite{wiepar2} \cite{wiepra}, which is a practical real world
+aviation simulation uses optimistic simulation technology. He points out several facts how DPAT
+avoids some of the problems associated with optimistic simulation.
+
+As far as airport simulations, it is an incredibly popular simulation problem. There is a myriad of
+prior work on the subject and we will have no shortage of previous implementations to examine.
+PDES implementations are somewhat rarer, due to their inherently increased complexity, but
+such examples to exist. To cite such examples would be of little benefit, because they are quite
+bountiful.

@@ -1,0 +1,18 @@
+\section{Project Description}
+
+Implementing parallel discrete event simulation (PDES) \cite{fujpar} has never been an easy task. There
+are many well known problems that come from the nature of parallelism such as managing
+concurrent threads execution or Heisenbugs, however, the major problem of implementing
+PDES is synchronization. In PDES, events are not synchronized by a global clock but rather
+scheduled irregularly. This introduces the necessity of a rollback mechanism in PDES.
+
+Backstroke \cite{vulthe} is a new open source framework for the automatic generation of reverse code for
+functions written in C++. Because writing an efficient rollback by hand is difficult, the primary
+purpose of Backstroke is to enable reverse computation for fast, efficient rollback in optimistic
+parallel discrete event simulation.  In this project, we’d like to benchmark the performance of the reverse code generation using
+Backstroke and evaluate how it can affect on the simulation performance in terms of time and
+space-wise compared to the hand-written code.
+
+This project consists of two parts. First part is to create a parallel discrete event simulation using
+Time Warp as the synchronization mechanism on ROSS \cite{carros}. Second part is to benchmark the
+simulation performance between the hand-written code and Backstroke-generated code.

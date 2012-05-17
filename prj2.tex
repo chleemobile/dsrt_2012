@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{CSE 6730 Project 2 Final Report\\Parallel Discrete Event Simulation \& Backstroke}
+\date{}
+\author{Chayong Lee, Christopher Toth, Douglas Black\\
+  Georgia Institute of Technology\\
+  \texttt{\{chayong82, ctoth6, dougblac\}@gatech.edu}}
+\begin{document}
+\maketitle
+
+\input{prj_desc.tex}
+\input{background.tex}
+\input{related.tex}
+\input{sim_desc.tex}
+\input{pdes.tex}
+\input{software.tex}
+\input{sim_results.tex}
+\input{parallel.tex}
+\input{additional.tex}
+\input{task.tex}
+\input{ref.tex}
+\end{document}  
